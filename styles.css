@@ -36,7 +36,6 @@ section {
   padding: 140px 20px 20px 20px; /* Adds space for the fixed header */
   gap: 20px; /* Adds space between the two forms */
   flex-shrink: 0; /* Prevents shrinking of form containers */
-  background-color: var(--basic-orange);
 }
 
 .form-container1, .form-container2 {
