@@ -1,0 +1,10 @@
+#balanceDisplayParagraph
+{
+    background-color: rgb(198, 190, 190);
+    border: 2px solid rgb(100, 98, 98);
+    border-radius: 25px;
+    text-align: center;
+    width: 1000px;
+    margin: 20px 265px;
+    font-size: 50px;
+}
