@@ -1,30 +1,108 @@
-!DOCTYPE html>
-<html>
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Tracker</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
 <body>
 
+  <h1 id="title">Budget Tracker</h1>
+<aside>
+  <section id="forms-container">
+    <div class="form-container1">
+      <h2>Income Form</h2>
+      <form id="incomeForm">
+        <label for="incomeSource">Income source:</label>
+        <input type="text" id="incomeSource" name="incomeSource" required><br><br>
 
+        <label for="incomeAmount">Income amount:</label>
+        <input type="number" id="incomeAmount" name="incomeAmount" required><br><br>
 
-<form action="src=script.js">
-  <label for="Income source">Income source:</label><br>
-  <input type="text" id="income source" name="income source"><br>
-  <label for="amount">Income amount:</label><br>
-  <input type="text" id="amount" name="amount"><br><br>
-  
+        <button id="addIncome">Add Income</button><br><br>
+        <button id="submitIncome">Submit</button>
+      </form>
+    </div>
+</aside>
+<article>
+    <div class="form-container2">
+      <h2>Expense Form</h2>
+      <form id="expenseForm">
+        <label for="expenseCategory">Category:</label>
+        <select id="expenseCategory" name="expenseCategory" required>
+          <option value="Food">Food</option>
+          <option value="Rent">Rent</option>
+          <option value="Travel">Travel</option>
+          <option value="Entertainment">Entertainment</option>
+          <option value="Add">Add: </option>
+        </select><br><br>
+       
+        <input type="text" id="addExpenseCategory" name="addExpenseCategory" hidden><br>
 
+        <label for="expenseTitle">Expense title:</label>
+        <input type="text" id="expenseTitle" name="expenseTitle" required><br><br>
 
-  <label for="category">Category:</label>
-  <select id="category" name="category">
-    <option value="job">Job</option>
-    <option value="govenrnment program">Govenrnment Program</option>
-    <option value="gift">Gift</option>
-    <option value="additional income">Additional Income Source:</option>
-   
-    <select id ="add" name="add">
-    <input hidden type="text" id="add" name="add"><br><br>
-    <input type="submit" value="Submit">
-    
-    
-</form>
+        <label for="expenseAmount">Expense amount:</label>
+        <input type="number" id="expenseAmount" name="expenseAmount" required><br><br>
 
+        <button id="addExpense">Add Expense</button><br><br>
+        <button id="submitExpense">Submit</button>
+      </form>
+    </div>
+  </section>
+</article>
+
+  <script src="script.js"></script>
 </body>
 </html>
+
+ -->
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Budget Tracker</title>
+   <link rel="stylesheet" href="styles.css">
+ </head>
+ <body>
+   <h1 id="title">Budget Tracker</h1>
+   <section id="forms-container">
+     <div class="form-container1">
+       <h2>Income Form</h2>
+       <form id="incomeForm">
+         <label for="incomeSource">Income source:</label>
+         <input type="text" id="incomeSource" name="incomeSource" required><br><br>
+         <label for="incomeAmount">Income amount:</label>
+         <input type="number" id="incomeAmount" name="incomeAmount" required><br><br>
+         <button id="addIncome">Add Income</button><br><br>
+         <button id="submitIncome">Submit</button>
+       </form>
+     </div>
+     <div class="form-container2">
+       <h2>Expense Form</h2>
+       <form id="expenseForm">
+         <label for="expenseCategory">Category:</label>
+         <select id="expenseCategory" name="expenseCategory" required>
+           <option value="Food">Food</option>
+           <option value="Rent">Rent</option>
+           <option value="Travel">Travel</option>
+           <option value="Entertainment">Entertainment</option>
+           <option value="Add">Add: </option>
+         </select><br><br>
+         <input type="text" id="addExpenseCategory" name="addExpenseCategory" hidden><br>
+         <label for="expenseTitle">Expense title:</label>
+         <input type="text" id="expenseTitle" name="expenseTitle" required><br><br>
+         <label for="expenseAmount">Expense amount:</label>
+         <input type="number" id="expenseAmount" name="expenseAmount" required><br><br>
+         <button id="addExpense">Add Expense</button><br><br>
+         <button id="submitExpense">Submit</button>
+       </form>
+     </div>
+   </section>
+   <script src="script.js"></script>
+ </body>
+ </html>
+ 
+ 
