@@ -30,8 +30,5 @@ document.addEventListener('DOMContentLoaded', function()
         //Display updated balance
         displayBalance();
     });
-//IN HTML:
-//Change id for input amount to incomeAmount
-//Create paragraph element with id="balanceDisplay" to insert the balance into
 
 });
