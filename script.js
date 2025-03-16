@@ -7,6 +7,12 @@ document.addEventListener('DOMContentLoaded', function()
     function displayBalance()
     {
         document.getElementById('balanceDisplay').textContent=balance;
+
+        //Alerts if balance<0
+        if (balance<0)
+            {
+                overdrawn();
+            }
     }
 
     //Handles income form
@@ -32,3 +38,10 @@ document.addEventListener('DOMContentLoaded', function()
     });
 
 });
+
+//Alerts user that their balance<0
+function overdrawn()
+{
+    alert("Your expenses exceed your income!");
+    document.getElementById('balanceDisplayParagraph').backgroundColor='red';
+}
