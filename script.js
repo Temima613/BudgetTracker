@@ -38,7 +38,7 @@ document.getElementById('expenseForm').addEventListener('submit', function(event
 // Show hidden input for "Add" category in expense form
 document.getElementById('expenseCategory').addEventListener('change', function() {
   let category = document.getElementById('expenseCategory').value;
-  let addExpenseCategoryInput = document.getElementById('addExpenseCategory');
+  let addExpenseCategoryInput = document.getElementById('addExpenseCategory');//add box
 
   if (category === 'Add') {
     addExpenseCategoryInput.hidden = false;  // Show the input for custom category
