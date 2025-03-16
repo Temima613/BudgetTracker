@@ -1,3 +1,4 @@
+
 :root {
     --basic-blue: #33a4ed;
     --basic-orange: #ea7f46;
@@ -122,4 +123,15 @@ body {
   
   input[type="text"]:focus, input[type="number"]:focus, select:focus {
     outline: 2px solid var(--basic-blue);
-  }
+}
+
+#balanceDisplayParagraph
+{
+    background-color: rgb(198, 190, 190);
+    border: 2px solid rgb(100, 98, 98);
+    border-radius: 25px;
+    text-align: center;
+    width: 1000px;
+    margin: 20px 265px;
+    font-size: 50px;
+}
