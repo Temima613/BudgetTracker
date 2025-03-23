@@ -21,6 +21,17 @@ document.addEventListener('DOMContentLoaded', function()
     function displayBalance()
     {
         document.getElementById('balanceDisplay').textContent=balance;
+
+        //Display alert if balance<0
+        if (balance<0)
+        {
+          document.getElementById('balanceDisplayParagraph').style.backgroundColor='red';
+          alert('You exceeded your budget.');
+        }
+        else
+        {
+          document.getElementById('balanceDisplayParagraph').style.backgroundColor='rgb(198, 190, 190)';
+        }
     }
 
     
@@ -108,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function()
       
       document.getElementById('expenseForm').reset();
     });
-  
+
   
   // Show hidden input for "Add" category in expense form
   document.getElementById('expenseCategory').addEventListener('change', function() {
