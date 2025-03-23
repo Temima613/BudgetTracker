@@ -56,6 +56,13 @@ document.addEventListener('DOMContentLoaded', function()
       balance=balance+incomeAmount;
       displayBalance();
   
+      //Add the new income source to the filter options
+      if (!(document.getElementById(incomeSource))) {   //only add new option if it doesn't already exist 
+        document.getElementById('incomeFilter').innerHTML += 
+         `<option id="${incomeSource}" value="${incomeSource}">${incomeSource}</option>`
+      }
+  
+
       // Create income display element
       let displayIncome = document.createElement('div');
       displayIncome.classList.add('incomeItem');
@@ -100,6 +107,18 @@ document.addEventListener('DOMContentLoaded', function()
       balance=balance-expenseAmount;
       displayBalance();
       
+      //handle a new category (when applicable)
+      if (expenseCategory === 'Add') {
+        expenseCategory = document.getElementById('addExpenseCategory').value; //changes expenseCategory to the new one
+        //add the new category to both dropdown lists if it isn't already there:
+        if (!(document.getElementById(expenseCategory))) {
+          document.getElementById('expenseCategory').innerHTML += 
+          `<option id="${expenseCategory}" value=${expenseCategory}>${expenseCategory}</option>`;
+          document.getElementById('expenseFilter').innerHTML += 
+          `<option id="${expenseCategory}" value=${expenseCategory}>${expenseCategory}</option>`;
+        }
+      }
+
       // Create expense display element
       let displayExpense = document.createElement('div');
       displayExpense.classList.add('expenseItem');
@@ -118,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function()
       expenseDisplayContainer.appendChild(displayExpense);
       
       document.getElementById('expenseForm').reset();
+      document.getElementById('addExpenseCategory').hidden = true; //Hide the add category input box
     });
 
   
