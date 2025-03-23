@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function()
     function displayBalance()
     {
         document.getElementById('balanceDisplay').textContent=balance;
+
+        //Display alert if balance<0
+        if (balance<0)
+        {
+          document.getElementById('balanceDisplay').style.backgroundColor='red';
+          alert('You exceeded your budget.');
+        }
     }
 
     
