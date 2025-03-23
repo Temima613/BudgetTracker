@@ -1,6 +1,10 @@
 //Program starts when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() 
 {
+    let incomeSource = '';
+    let incomeAmount = 0;
+    const expenses = [];
+    const incomes = [];
     let balance=0;
     
     //Displays balance on page
@@ -9,26 +13,68 @@ document.addEventListener('DOMContentLoaded', function()
         document.getElementById('balanceDisplay').textContent=balance;
     }
 
-    //Handles income form
-    document.getElementById('incomeAmount').addEventListener('click', function()
-    {
-        //Adds the most recently inputted income value to balance
-        let incomeAmount=document.getElementById('incomeAmount').value;
-        balance=balance+incomeAmount;
+  
+    // Handle income form submission
+    document.getElementById('incomeForm').addEventListener('click', function(event) {
+      event.preventDefault();
+      incomeSource = document.getElementById('incomeSource').value;
+      incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
 
-        //Display updated balance
-        displayBalance();
+      if (isNaN(incomeAmount) || incomeAmount <= 0) {
+        alert('Please enter a valid income amount.');
+        return;
+      }
+
+      //Append current income object to the list of incomes
+      let incomeObject={source: incomeSource, amount: incomeAmount};
+      incomes.push(incomeObject);
+      
+      console.log('Income added:', incomeSource, incomeAmount);
+      document.getElementById('incomeForm').reset();
+
+      //Display updated balance
+      balance=balance+incomeAmount;
+      displayBalance();
     });
 
-    //Handles expense form
-    document.getElementById('expenseAmount').addEventListener('click', function()
-    {
-        //Decreases balance by the most recently inputted income value
-        let expenseAmount=document.getElementById('expenseAmount').value;
-        balance=balance-expenseAmount;
+  
+    // Handle expense form submission
+    document.getElementById('expenseForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-        //Display updated balance
-        displayBalance();
+      let expenseCategory = document.getElementById('expenseCategory').value;
+      let expenseTitle = document.getElementById('expenseTitle').value;
+      let expenseAmount = parseFloat(document.getElementById('expenseAmount').value);
+
+      if (isNaN(expenseAmount) || expenseAmount <= 0) {
+        alert('Please enter a valid expense amount.');
+        return;
+      }
+      
+      //Append current expense object to the list of expenses
+      let expenseObject={category: expenseCategory, title: expenseTitle, amount: expenseAmount};
+      expenses.push(expenseObject);
+      
+      console.log('Expense added:', expenseCategory, expenseTitle, expenseAmount);
+      document.getElementById('expenseForm').reset();
+
+      //Display updated balance
+      balance=balance-expenseAmount;
+      displayBalance();
     });
+  
+  
+  // Show hidden input for "Add" category in expense form
+  document.getElementById('expenseCategory').addEventListener('change', function() {
+    let category = document.getElementById('expenseCategory').value;
+    let addExpenseCategoryInput = document.getElementById('addExpenseCategory');//add box
+
+    if (category === 'Add') {
+      addExpenseCategoryInput.hidden = false;  // Show the input for custom category
+    } else {
+      addExpenseCategoryInput.hidden = true;   // Hide the input if "Add" is not selected
+    }
+  });
 
 });
+
