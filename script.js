@@ -119,7 +119,7 @@ document.addEventListener('DOMContentLoaded', function()
       
       document.getElementById('expenseForm').reset();
     });
-  
+
   
   // Show hidden input for "Add" category in expense form
   document.getElementById('expenseCategory').addEventListener('change', function() {
