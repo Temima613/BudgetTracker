@@ -1,4 +1,5 @@
-:root {
+:root 
+{
   --basic-blue: #33a4dd;
   --basic-orange: #edaa87;
   --lighter-blue: #65b1d7;
@@ -17,41 +18,21 @@ h1 {
   font-size: 2em;
 }
 
-#title {
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
-  width: 100%;
+h2 {
   text-align: center;
-  font-size: 2em;
-  z-index: 1000;
-  background-color: var(--lighter-blue); /* Prevents background overlap */
 }
 
-section {
+h2 + p {
+  text-align: center;
+}
+
+section 
+{
   display: flex;
   justify-content: space-between;
   padding: 140px 20px 20px 20px; /* Adds space for the fixed header */
   gap: 20px; /* Adds space between the two forms */
   flex-shrink: 0; /* Prevents shrinking of form containers */
-}
-
-.form-container1, .form-container2 {
-  padding: 20px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 48%; /* Ensures the forms take 48% of the container width */
-  min-width: 400px; /* Prevents forms from becoming too small */
-}
-
-.form-container1 {
-  background-color: var(--lighter-blue); /* Light blue background */
-}
-
-.form-container2 {
-  background-color: var(--lighter-orange); /* Light orange background */
 }
 
 aside {
@@ -77,11 +58,6 @@ input, select {
 input[type="submit"], button {
   width: auto;
   background-color: var(--basic-blue);
-  color: white;
-  border: none;
-  cursor: pointer;
-  padding: 10px 20px;
-  margin: 5px 0;
 }
 
 input[type="submit"]:hover, button:hover {
@@ -92,6 +68,10 @@ input[type="submit"]:hover, button:hover {
 input[type="submit"]:disabled, button:disabled {
   background-color: grey;
   cursor: not-allowed;
+}
+
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+  outline: 2px solid var(--basic-blue);
 }
 
 form label {
@@ -105,7 +85,73 @@ select {
   border-radius: 4px;
 }
 
-input[type="text"]:focus, input[type="number"]:focus, select:focus {
-  outline: 2px solid var(--basic-blue);
+
+.form-container1, .form-container2 {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 48%; /* Ensures the forms take 48% of the container width */
+  min-width: 400px; /* Prevents forms from becoming too small */
 }
+
+.form-container1 {
+  background-color: var(--lighter-blue); /* Light blue background */
+}
+
+.form-container2 {
+  background-color: var(--lighter-orange); /* Light orange background */
+}
+
+#title 
+{
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+  font-size: 2em;
+  z-index: 1000;
+  background-color: var(--lighter-blue); /* Prevents background overlap */
+  color: var(--basic-expense);
+  text-shadow: #222 2px 2px 2px;
+}
+
+#intro {
+  margin-top: 60px; /* Adds space for the fixed header */
+  padding: 5px 20px 20px;
+  border-radius: 15px;
+}
+
+#intro > p 
+{
+  margin: 0 2em;
+}
+
+#balanceDisplayParagraph
+{
+  background-color: rgb(198, 190, 190);
+  border: 2px solid rgb(100, 98, 98);
+  border-radius: 25px;
+  text-align: center;
+  width: 80%;
+  margin: auto;
+  font-size: 50px;
+}
+
+
+
+
+/* Attributes that lost their selector:(
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 10px 20px;
+  margin: 5px 0;
+}
+*/
+
+
+
 

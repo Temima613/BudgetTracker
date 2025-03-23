@@ -1,49 +1,80 @@
-let incomeSource = '';
-let incomeAmount = 0;
-let expenses = [];
+//Program starts when the DOM is loaded
+document.addEventListener('DOMContentLoaded', function() 
+{
+    let incomeSource = '';
+    let incomeAmount = 0;
+    const expenses = [];
+    const incomes = [];
+    let balance=0;
+    
+    //Displays balance on page
+    function displayBalance()
+    {
+        document.getElementById('balanceDisplay').textContent=balance;
+    }
 
-// Handle income form submission
-document.getElementById('incomeForm').addEventListener('submit', function(event) {
-  event.preventDefault();
-  incomeSource = document.getElementById('incomeSource').value;
-  incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
+  
+    // Handle income form submission
+    document.getElementById('incomeForm').addEventListener('click', function(event) {
+      event.preventDefault();
+      incomeSource = document.getElementById('incomeSource').value;
+      incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
 
-  if (isNaN(incomeAmount) || incomeAmount <= 0) {
-    alert('Please enter a valid income amount.');
-    return;
-  }
+      if (isNaN(incomeAmount) || incomeAmount <= 0) {
+        alert('Please enter a valid income amount.');
+        return;
+      }
 
-  console.log('Income added:', incomeSource, incomeAmount);
-  document.getElementById('incomeForm').reset();
-});
+      //Append current income object to the list of incomes
+      let incomeObject={source: incomeSource, amount: incomeAmount};
+      incomes.push(incomeObject);
+      
+      console.log('Income added:', incomeSource, incomeAmount);
+      document.getElementById('incomeForm').reset();
 
-// Handle expense form submission
-document.getElementById('expenseForm').addEventListener('submit', function(event) {
-  event.preventDefault();
+      //Display updated balance
+      balance=balance+incomeAmount;
+      displayBalance();
+    });
 
-  let category = document.getElementById('expenseCategory').value;
-  let title = document.getElementById('expenseTitle').value;
-  let amount = parseFloat(document.getElementById('expenseAmount').value);
+  
+    // Handle expense form submission
+    document.getElementById('expenseForm').addEventListener('submit', function(event) {
+      event.preventDefault();
 
-  if (isNaN(amount) || amount <= 0) {
-    alert('Please enter a valid expense amount.');
-    return;
-  }
+      let expenseCategory = document.getElementById('expenseCategory').value;
+      let expenseTitle = document.getElementById('expenseTitle').value;
+      let expenseAmount = parseFloat(document.getElementById('expenseAmount').value);
 
-  expenses.push({ category, title, amount });
-  console.log('Expense added:', category, title, amount);
-  document.getElementById('expenseForm').reset();
-});
+      if (isNaN(expenseAmount) || expenseAmount <= 0) {
+        alert('Please enter a valid expense amount.');
+        return;
+      }
+      
+      //Append current expense object to the list of expenses
+      let expenseObject={category: expenseCategory, title: expenseTitle, amount: expenseAmount};
+      expenses.push(expenseObject);
+      
+      console.log('Expense added:', expenseCategory, expenseTitle, expenseAmount);
+      document.getElementById('expenseForm').reset();
 
-// Show hidden input for "Add" category in expense form
-document.getElementById('expenseCategory').addEventListener('change', function() {
-  let category = document.getElementById('expenseCategory').value;
-  let addExpenseCategoryInput = document.getElementById('addExpenseCategory');//add box
+      //Display updated balance
+      balance=balance-expenseAmount;
+      displayBalance();
+    });
+  
+  
+  // Show hidden input for "Add" category in expense form
+  document.getElementById('expenseCategory').addEventListener('change', function() {
+    let category = document.getElementById('expenseCategory').value;
+    let addExpenseCategoryInput = document.getElementById('addExpenseCategory');//add box
 
-  if (category === 'Add') {
-    addExpenseCategoryInput.hidden = false;  // Show the input for custom category
-  } else {
-    addExpenseCategoryInput.hidden = true;   // Hide the input if "Add" is not selected
-  }
+    if (category === 'Add') {
+      addExpenseCategoryInput.hidden = false;  // Show the input for custom category
+    } else {
+      addExpenseCategoryInput.hidden = true;   // Hide the input if "Add" is not selected
+    }
+  });
+
 });
 
