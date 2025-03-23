@@ -32,6 +32,7 @@ header > h1 {
   margin-top: 60px; /* Adds space for the fixed header */
   padding: 5px 20px 20px;
   border-radius: 15px;
+  background-color: var(--basic-expense);
 }
 
 h2 {
@@ -70,14 +71,6 @@ section {
   background-color: var(--lighter-expense); /* Light expense background */
 }
   
-aside {
-  background-color: var(--basic-income);
-}
-  
-article {
-  background-color: var(--basic-expense);
-}
-  
 label {
   font-weight: bold;
 }
@@ -103,16 +96,6 @@ input[type="submit"], button {
 input[type="submit"]:hover, button:hover {
   background-color: var(--basic-income);
   opacity: 0.9;
-}
-  
-input[type="submit"]:disabled, button:disabled {
-  background-color: grey;
-  cursor: not-allowed;
-}
-  
-form label {
-  font-size: 1em;
-  margin-bottom: 5px;
 }
   
 select {
