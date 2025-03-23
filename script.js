@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function()
     let incomeAmount = 0;
     const expenses = [];
     const incomes = [];
-    let balance=0.00;
+    let balance= 0.00;
   
     // Create containers for displaying incomes and expenses (instead of doing it in HTML)
     let incomeDisplayContainer = document.createElement('div');
@@ -21,6 +21,13 @@ document.addEventListener('DOMContentLoaded', function()
     function displayBalance()
     {
         document.getElementById('balanceDisplay').textContent=balance;
+
+        //Alerts if balance<0
+        if (balance<0)
+        {
+          document.getElementById('balanceDisplay').style.backgroundColor='red';
+          alert("You exceeded your budget.");
+        }
     }
 
     
