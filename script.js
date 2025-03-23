@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function()
         //Display alert if balance<0
         if (balance<0)
         {
-          document.getElementById('balanceDisplay').style.backgroundColor='red';
+          document.getElementById('balanceDisplayParagraph').style.backgroundColor='red';
           alert('You exceeded your budget.');
         }
     }
