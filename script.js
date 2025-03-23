@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', function()
 
     
   // Handle income form submission
-    document.getElementById('incomeForm').addEventListener('click', function(event) {
+    document.getElementById('incomeForm').addEventListener('submit', function(event) {
       event.preventDefault();
       incomeSource = document.getElementById('incomeSource').value;
       incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
@@ -59,6 +59,9 @@ document.addEventListener('DOMContentLoaded', function()
       displayIncome.style.textAlign = 'center';
       displayIncome.style.marginBottom = '10px';
   
+      //Displays container of new income
+      incomeDisplayContainer.appendChild(displayIncome);
+
       document.getElementById('incomeForm').reset();
     });
 
@@ -118,27 +121,6 @@ document.addEventListener('DOMContentLoaded', function()
       addExpenseCategoryInput.hidden = true;   // Hide the input if "Add" is not selected
     }
   });
-  
-/*
-// When income is entered
-document.getElementById('incomeAmount').addEventListener('click', function() {
-  let incomeAmount = parseFloat(document.getElementById('incomeAmount').value);
-  if (!isNaN(incomeAmount) && incomeAmount > 0) {
-    balance += incomeAmount; // Add income to balance
-    displayBalance();
-  }
-});
-
-// When expense is entered
-document.getElementById('expenseAmount').addEventListener('click', function() {
-  let expenseAmount = parseFloat(document.getElementById('expenseAmount').value);
-  if (!isNaN(expenseAmount) && expenseAmount > 0) {
-    balance -= expenseAmount; // Subtract expense from balance
-    displayBalance();
-  });
-*/
-  
-  
   
  });
   
