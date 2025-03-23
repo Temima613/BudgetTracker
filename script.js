@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function()
     let incomeAmount = 0;
     const expenses = [];
     const incomes = [];
-    let balance=0;
+    let balance=0.00;
   
     // Create containers for displaying incomes and expenses (instead of doing it in HTML)
     let incomeDisplayContainer = document.createElement('div');
