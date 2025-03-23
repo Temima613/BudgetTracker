@@ -6,6 +6,7 @@ document.addEventListener('DOMContentLoaded', function()
     const expenses = [];
     const incomes = [];
     let balance=0;
+    var expenseCategoryElements=document.querySelectorAll("#expenseFilter option");
   
     // Create containers for displaying incomes and expenses (instead of doing it in HTML)
     let incomeDisplayContainer = document.createElement('div');
@@ -16,7 +17,23 @@ document.addEventListener('DOMContentLoaded', function()
     expenseDisplayContainer.id = 'expenseDisplayContainer';
     document.querySelector('.expenses').appendChild(expenseDisplayContainer);
 
-   
+
+  // Filter by expense category
+  const categorySelect = document.getElementById('expenseFilter');
+  const items = document.querySelectorAll('.expenseItem');
+
+  categorySelect.addEventListener('change', () => {
+      const selectedCategory = categorySelect.value;
+      items.forEach(item => {
+          if (selectedCategory === 'All Expenses' || item.value === selectedCategory) {
+              item.style.display = 'block';
+          } else {
+              item.style.display = 'none';
+          }
+      });
+  });
+
+
     //Displays balance on page
     function displayBalance()
     {
@@ -73,6 +90,7 @@ document.addEventListener('DOMContentLoaded', function()
       //Displays container of new income
       incomeDisplayContainer.appendChild(displayIncome);
 
+      //Update nodelist of option elements
       document.getElementById('incomeForm').reset();
     });
 
@@ -118,8 +136,10 @@ document.addEventListener('DOMContentLoaded', function()
       expenseDisplayContainer.appendChild(displayExpense);
       
       document.getElementById('expenseForm').reset();
-    });
 
+      expenseCategoryElements=document.querySelectorAll("#expenseFilter option");
+    });
+  
   
   // Show hidden input for "Add" category in expense form
   document.getElementById('expenseCategory').addEventListener('change', function() {
@@ -132,6 +152,5 @@ document.addEventListener('DOMContentLoaded', function()
       addExpenseCategoryInput.hidden = true;   // Hide the input if "Add" is not selected
     }
   });
-  
- });
-  
+});
+
