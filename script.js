@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function()
           document.getElementById('balanceDisplay').style.backgroundColor='red';
           alert('You exceeded your budget.');
         }
+        else
+        {
+          document.getElementById('balanceDisplay').style.backgroundColor='rgb(198, 190, 190)';
+        }
     }
 
     
@@ -115,12 +119,15 @@ document.addEventListener('DOMContentLoaded', function()
       
       document.getElementById('expenseForm').reset();
     });
+<<<<<<< HEAD
+=======
   
   
   // Show hidden input for "Add" category in expense form
   document.getElementById('expenseCategory').addEventListener('change', function() {
     let category = document.getElementById('expenseCategory').value;
     let addExpenseCategoryInput = document.getElementById('addExpenseCategory');//add box
+>>>>>>> 918238dd652ec9bb2524de92dac1352d6e0df643
 
     if (category === 'Add') {
       addExpenseCategoryInput.hidden = false;  // Show the input for custom category
