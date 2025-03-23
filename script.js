@@ -28,6 +28,10 @@ document.addEventListener('DOMContentLoaded', function()
           document.getElementById('balanceDisplayParagraph').style.backgroundColor='red';
           alert('You exceeded your budget.');
         }
+        else
+        {
+          document.getElementById('balanceDisplayParagraph').style.backgroundColor='rgb(198, 190, 190)';
+        }
     }
 
     
