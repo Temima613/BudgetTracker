@@ -134,6 +134,7 @@ select {
   margin-top: 60px; /* Adds space for the fixed header */
   padding: 5px 20px 20px;
   border-radius: 15px;
+}
   
 input[type="text"]:focus, input[type="number"]:focus, select:focus {
   outline: 2px solid var(--basic-income);

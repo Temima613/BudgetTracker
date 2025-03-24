@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', function() {
   expenseDisplayContainer.id = 'expenseDisplayContainer';
   document.querySelector('.expenses').appendChild(expenseDisplayContainer);
 
+  //Filter income by category
+  const sourceSelect = document.getElementById('incomeFilter');
+  sourceSelect.addEventListener('change', () => {
+      const selectedSource = sourceSelect.value;
+      const items = document.querySelectorAll('.incomeItem');
+      items.forEach(item => {
+          if (selectedSource === 'All Incomes' || item.dataset.source === selectedSource) {
+              item.style.display = 'block';
+          } else {
+              item.style.display = 'none';
+          }
+      });
+  });
+
   // Filter by expense category
   const categorySelect = document.getElementById('expenseFilter');
 
