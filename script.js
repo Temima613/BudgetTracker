@@ -1,3 +1,7 @@
+/*Chana Leah Nissel
+  Temima Lewing
+  Sara Nechama Isenberg*/
+  
 // Program starts when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   let incomeSource = '';
