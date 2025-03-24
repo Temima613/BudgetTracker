@@ -1,88 +1,91 @@
 <!DOCTYPE html>
- <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Budget Tracker</title>
-        <link rel="icon" type="image/x-icon" href="favicon.ico">
-        <link rel="stylesheet" href="styles.css">
-    </head>
-    <body>
-        <header>
-            <h1>Budget Tracker</h1>
-        </header>
-        <article id="intro">
-            <h2>Welcome to our Budget Tracking Website!</h2>
-            <p>
-                Not only does our system dynamically calculate your balance 
-                based on the incomes and expenses you input, but it also will 
-                show you how much of your budget is spent on each category 
-                of expenses so that you can see where your money really goes.
-            </p>
-            <h3>Instructions:</h3>
-            <p>
-                Simply enter the information in the boxes below and then press 
-                submit. You can submit as many incomes and expenses as you want. 
-                Watch the balance and the lists below update every time you 
-                press the submit button! If you would like to see only a certain 
-                category of your incomes or expenses, use the filter option just 
-                above the list to choose which you would like to see.
-            </p>
-        </article>
-        <section id="forms-container">
-            <div class="form-container1">
-                <h2>Income Form</h2>
-                <form id="incomeForm">
-                    <label for="incomeSource">Income source:</label>
-                    <input type="text" id="incomeSource" name="incomeSource" required><br><br>
-                    <label for="incomeAmount">Income amount:</label>
-                    <input type="number" id="incomeAmount" name="incomeAmount" required><br><br>
-                    <button id="addIncome">Add Income</button><br><br>
-
-                </form>
-            </div>
-            <div class="form-container2">
-                <h2>Expense Form</h2>
-                <form id="expenseForm">
-                    <label for="expenseCategory">Category:</label>
-                    <select id="expenseCategory" name="expenseCategory" required>
-                        <option value="Food">Food</option>
-                        <option value="Rent">Rent</option>
-                        <option value="Travel">Travel</option>
-                        <option value="Entertainment">Entertainment</option>
-                        <option value="Add">Add: </option>
-                    </select>
-                    <br><br>
-                    <input type="text" id="addExpenseCategory" name="addExpenseCategory" hidden><br>
-                    <label for="expenseTitle">Expense title:</label>
-                    <input type="text" id="expenseTitle" name="expenseTitle" required><br><br>
-                    <label for="expenseAmount">Expense amount:</label>
-                    <input type="number" id="expenseAmount" name="expenseAmount" required><br><br>
-                    <button id="addExpense">Add Expense</button>
-                    <br><br>
-                </form>
-            </div>
-        </section>
-        <p id="balanceDisplayParagraph">Your balance is $<span id="balanceDisplay">0</span></p>
-        <section class="display-from-input">
-            <div class="incomes">
-                <label for="incomeFilter">Filter Incomes</label>
-                <select id="incomeFilter" name="incomeFilter">
-                    <option value="noFilter" selected>All Incomes</option>
-                </select>
-            </div>
-            <div class="expenses">
-                <label for="expenseFilter">Filter Expenses</label>
-                <select id="expenseFilter" name="expenseFilter">
-                    <option value="noFilter" selected>All Expenses</option>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budget Tracker</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Budget Tracker</h1>
+    </header>
+    <article id="intro">
+        <h2>Welcome to our Budget Tracking Website!</h2>
+        <p>
+            Not only does our system dynamically calculate your balance
+            based on the incomes and expenses you input, but it also will
+            show you how much of your budget is spent on each category
+            of expenses so that you can see where your money really goes.
+        </p>
+        <h3>Instructions:</h3>
+        <p>
+            Simply enter the information in the boxes below and then press
+            submit. You can submit as many incomes and expenses as you want.
+            Watch the balance and the lists below update every time you
+            press the submit button! If you would like to see only a certain
+            category of your incomes or expenses, use the filter option just
+            above the list to choose which you would like to see.
+        </p>
+    </article>
+    <section id="forms-container">
+        <div class="form-container1">
+            <h2>Income Form</h2>
+            <form id="incomeForm">
+                <label for="incomeSource">Income source:</label>
+                <input type="text" id="incomeSource" name="incomeSource" required><br><br>
+                <label for="incomeAmount">Income amount:</label>
+                <input type="number" id="incomeAmount" name="incomeAmount" required><br><br>
+                <label for="incomeDate">Income date:</label>
+                <input type="date" id="incomeDate" name="incomeDate"><br><br>
+                <button id="addIncome">Add Income</button><br><br>
+            </form>
+        </div>
+        <div class="form-container2">
+            <h2>Expense Form</h2>
+            <form id="expenseForm">
+                <label for="expenseCategory">Category:</label>
+                <select id="expenseCategory" name="expenseCategory" required>
                     <option value="Food">Food</option>
                     <option value="Rent">Rent</option>
                     <option value="Travel">Travel</option>
                     <option value="Entertainment">Entertainment</option>
+                    <option value="Add">Add: </option>
                 </select>
-            </div>
-        </section>
-        <script src="script.js"></script>
-    </body>
- </html>
-
+                <br><br>
+                <input type="text" id="addExpenseCategory" name="addExpenseCategory" hidden><br>
+                <label for="expenseTitle">Expense title:</label>
+                <input type="text" id="expenseTitle" name="expenseTitle" required><br><br>
+                <label for="expenseAmount">Expense amount:</label>
+                <input type="number" id="expenseAmount" name="expenseAmount" required><br><br>
+                <label for="expenseDate">Expense date:</label>
+                <input type="date" id="expenseDate" name="expenseDate"><br><br>
+                <button id="addExpense">Add Expense</button>
+                <br><br>
+            </form>
+        </div>
+    </section>
+    <p id="balanceDisplayParagraph">Your balance is $<span id="balanceDisplay">0</span></p>
+    <section class="display-from-input">
+        <div class="incomes">
+            <label for="incomeFilter">Filter Incomes</label>
+            <select id="incomeFilter" name="incomeFilter">
+                <option value="All Incomes" selected>All Incomes</option>
+            </select>
+        </div>
+        <div class="expenses">
+            <label for="expenseFilter">Filter Expenses</label>
+            <select id="expenseFilter" name="expenseFilter">
+                <option value="All Expenses" selected>All Expenses</option>
+                <option value="Food">Food</option>
+                <option value="Rent">Rent</option>
+                <option value="Travel">Travel</option>
+                <option value="Entertainment">Entertainment</option>
+            </select>
+        </div>
+    </section>
+    <button id="sortByDate">Sort by Date</button>
+    <script src="script.js"></script>
+</body>
+</html>
