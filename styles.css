@@ -5,8 +5,8 @@
 */
 
 :root {
-  --basic-income: #33a4ed;
-  --basic-expense: #ea7f46;
+  --basic-income: #33a4dd;
+  --basic-expense: #edaa87;
   --lighter-income: #65b1d7;
   --lighter-expense: #f1c0a6;
 }
@@ -16,7 +16,7 @@ body {
   margin: 0;
   padding: 0;
 }
-  
+
 header > h1 {
   position: fixed;
   top: 0;
@@ -29,8 +29,7 @@ header > h1 {
   font-size: 2em;
   z-index: 1000;
   color: var(--basic-expense);
-  text-shadow: #222 2px 2px 2px, var(--lighter-expense) 0 0 5px; 
-  border: 2px solid #0a5486;
+  text-shadow: #222 2px 2px 2px;
   background-color: var(--lighter-income); /* Prevents background overlap */
 }
 
@@ -56,7 +55,7 @@ h2 + p {
 section {
   display: flex;
   justify-content: space-between;
-  padding: 20px; 
+  padding: 50px 20px 20px 20px; /* Adds space for the fixed header */
   gap: 20px; /* Adds space between the two forms */
   flex-shrink: 0; /* Prevents shrinking of form containers */
 }
@@ -104,11 +103,37 @@ input[type="submit"]:hover, button:hover {
   opacity: 0.9;
 }
 
+form label {
+  font-size: 1em;
+  margin-bottom: 5px;
+}
+
 select {
   padding: 8px;
   margin: 5px 0;
   border-radius: 4px;
 }
+
+.form-container1, .form-container2 {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 48%; /* Ensures the forms take 48% of the container width */
+  min-width: 400px; /* Prevents forms from becoming too small */
+}
+
+.form-container1 {
+  background-color: var(--lighter-income); /* Light blue background */
+}
+
+.form-container2 {
+  background-color: var(--lighter-expense); /* Light orange background */
+}
+
+#intro {
+  margin-top: 60px; /* Adds space for the fixed header */
+  padding: 5px 20px 20px;
+  border-radius: 15px;
   
 input[type="text"]:focus, input[type="number"]:focus, select:focus {
   outline: 2px solid var(--basic-income);
@@ -122,4 +147,20 @@ input[type="text"]:focus, input[type="number"]:focus, select:focus {
   width: 80%;
   margin: auto;
   font-size: 50px;
+
+}
+
+#sortByDate {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--basic-income);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#sortByDate:hover {
+  opacity: 0.9;
 }
