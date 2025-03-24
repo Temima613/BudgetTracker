@@ -34,8 +34,14 @@ header > h1 {
   border: 2px solid #06577f; /*Darker border so won't appear to blend with income form container*/
 }
 
+img {
+  height: 2em;
+  vertical-align: bottom;
+  margin: 0 5px;
+}
+
 #intro {
-  margin-top: 75px; /* Adds space for the fixed header */
+  margin-top: 100px; /* Adds space for the fixed header */
   padding: 5px 20px 20px;
   border-radius: 15px;
   background-color: var(--basic-expense);
