@@ -141,8 +141,8 @@ document.addEventListener('DOMContentLoaded', function() {
   
         }
 
+        //Clear expense form after user submits
         document.getElementById('expenseForm').reset();
-        ///////////////////////////////////////////////////////////////////////
         let addExpenseCategoryInput = document.getElementById('addExpenseCategory');
         addExpenseCategoryInput.hidden = true;
   
