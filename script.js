@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // Append to the container
       expenseDisplayContainer.appendChild(displayExpense);
 
-      document.getElementById('expenseForm').reset();
+      //document.getElementById('expenseForm').reset();
 
   });
 
@@ -186,8 +186,6 @@ document.addEventListener('DOMContentLoaded', function() {
           expenseDisplayContainer.appendChild(displayExpense);
       });
   });
-      document.getElementById('addExpenseCategory').hidden = true; //Hide the add category input box
-    });
 
 
   // Show hidden input for "Add" category in expense form
