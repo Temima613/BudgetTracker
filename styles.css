@@ -4,12 +4,11 @@
   Sara Nechama Isenberg
 */
 
-:root 
-{
+:root {
   --basic-income: #33a4dd;
   --basic-expense: #edaa87;
   --lighter-income: #65b1d7;
-  --lighter-expense: #d9ac94;
+  --lighter-expense: #f1c0a6;
 }
 
 body {
@@ -18,8 +17,7 @@ body {
   padding: 0;
 }
 
-header > h1 
-{
+header > h1 {
   position: fixed;
   top: 0;
   left: 50%;
@@ -31,49 +29,65 @@ header > h1
   font-size: 2em;
   z-index: 1000;
   color: var(--basic-expense);
-  text-shadow: #222 2px 2px 2px; 
+  text-shadow: #222 2px 2px 2px;
   background-color: var(--lighter-income); /* Prevents background overlap */
 }
 
-h1 {
+#intro {
+  margin-top: 80px; /* Adds space for the fixed header */
+  padding: 5px 20px 20px;
+  border-radius: 15px;
+  background-color: var(--basic-expense);
+}
+
+h2 {
   text-align: center;
-  margin: 0;
-  font-size: 2em;
 }
 
 h2 + p {
-  text-align: center;
+  text-align: center; /*center align the first paragraph of the intro text*/
 }
 
-section 
-{
+#intro > p {
+  margin: 0 2em;
+}
+
+section {
   display: flex;
   justify-content: space-between;
-   padding: 50px 20px 20px 20px; /*Adds space for the fixed header */
+  padding: 50px 20px 20px 20px; /* Adds space for the fixed header */
   gap: 20px; /* Adds space between the two forms */
   flex-shrink: 0; /* Prevents shrinking of form containers */
 }
-
-aside {
-  background-color: var(--basic-income);
+  
+.form-container1, .form-container2 {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 48%; /* Ensures the forms take 48% of the container width */
+  min-width: 400px; /* Prevents forms from becoming too small */
 }
-
-article {
-  background-color: var(--basic-expense);
+  
+.form-container1 {
+  background-color: var(--lighter-income); /* Light income background */
+}
+  
+.form-container2 {
+  background-color: var(--lighter-expense); /* Light expense background */
 }
 
 label {
   font-weight: bold;
 }
-
+  
 input, select {
   width: 100%;
   padding: 8px;
   margin: 5px 0;
   border-radius: 4px;
-  border: 1px solid var(--basic-income);
+  border: 1px solid var(--basic-expense);
 }
-
+  
 input[type="submit"], button {
   width: auto;
   background-color: var(--basic-income);
@@ -83,12 +97,11 @@ input[type="submit"], button {
   padding: 10px 20px;
   margin: 5px 0;
 }
-
+  
 input[type="submit"]:hover, button:hover {
   background-color: var(--basic-income);
   opacity: 0.9;
 }
-
 
 form label {
   font-size: 1em;
@@ -100,7 +113,6 @@ select {
   margin: 5px 0;
   border-radius: 4px;
 }
-
 
 .form-container1, .form-container2 {
   padding: 20px;
@@ -118,31 +130,16 @@ select {
   background-color: var(--lighter-expense); /* Light orange background */
 }
 
-#title 
-{
-  position: fixed;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px;
-  width: 100%;
-  text-align: center;
-  font-size: 2em;
-  z-index: 1000;
-  background-color: var(--lighter-income); /* Prevents background overlap */
-  color: var(--basic-expense);
-  text-shadow: #222 2px 2px 2px;
-}
-
- #intro {
+#intro {
   margin-top: 60px; /* Adds space for the fixed header */
   padding: 5px 20px 20px;
   border-radius: 15px;
-} 
+  
+input[type="text"]:focus, input[type="number"]:focus, select:focus {
+  outline: 2px solid var(--basic-income);
+}
 
-
-#balanceDisplayParagraph
-{
+#balanceDisplayParagraph {
   background-color: rgb(198, 190, 190);
   border: 2px solid rgb(100, 98, 98);
   border-radius: 25px;
@@ -150,95 +147,20 @@ select {
   width: 80%;
   margin: auto;
   font-size: 50px;
+
 }
 
-  section {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px; /* Adds space for the fixed header */
-    gap: 20px; /* Adds space between the two forms */
-    flex-shrink: 0; /* Prevents shrinking of form containers */
-  }
-  
-  .form-container1, .form-container2 {
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    width: 48%; /* Ensures the forms take 48% of the container width */
-    min-width: 400px; /* Prevents forms from becoming too small */
-  }
-  
-  .form-container1 {
-    background-color: var(--lighter-blue); /* Light blue background */
-  }
-  
-  .form-container2 {
-    background-color: var(--lighter-orange); /* Light orange background */
-  }
-  
-  aside {
-    background-color: var(--basic-blue);
-  }
-  
-  article {
-    background-color: var(--basic-orange);
-  }
-  
-  label {
-    font-weight: bold;
-  }
-  
-  input, select {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 4px;
-    border: 1px solid var(--basic-orange);
-  }
-  
-  input[type="submit"], button {
-    width: auto;
-    background-color: var(--basic-blue);
-    color: white;
-    border: none;
-    cursor: pointer;
-    padding: 10px 20px;
-    margin: 5px 0;
-  }
-  
-  input[type="submit"]:hover, button:hover {
-    background-color: var(--basic-blue);
-    opacity: 0.9;
-  }
-  
-  input[type="submit"]:disabled, button:disabled {
-    background-color: grey;
-    cursor: not-allowed;
-  }
-  
-  form label {
-    font-size: 1em;
-    margin-bottom: 5px;
-  }
-  
-  select {
-    padding: 8px;
-    margin: 5px 0;
-    border-radius: 4px;
-  }
-  
-  input[type="text"]:focus, input[type="number"]:focus, select:focus {
-    outline: 2px solid var(--basic-blue);
+#sortByDate {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: var(--basic-income);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
-#balanceDisplayParagraph
-{
-    background-color: rgb(198, 190, 190);
-    border: 2px solid rgb(100, 98, 98);
-    border-radius: 25px;
-    text-align: center;
-    width: 1000px;
-    margin: 20px 265px;
-    font-size: 50px;
+#sortByDate:hover {
+  opacity: 0.9;
 }
-
