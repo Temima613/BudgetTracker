@@ -9,7 +9,7 @@
 </head>
 <body>
     <header>
-        <h1>Budget Tracker</h1>
+        <h1>BudgeIT</h1>
     </header>
     <article id="intro">
         <h2>Welcome to our Budget Tracking Website!</h2>
@@ -22,11 +22,16 @@
         <h3>Instructions:</h3>
         <p>
             Simply enter the information in the boxes below and then press
-            submit. You can submit as many incomes and expenses as you want.
+            submit. Entering a date is optional, if you submit without  
+            inputting a date, it will default to the current date(UTC).
+            You can submit as many incomes and expenses as you want.
             Watch the balance and the lists below update every time you
             press the submit button! If you would like to see only a certain
             category of your incomes or expenses, use the filter option just
-            above the list to choose which you would like to see.
+            above the list to choose which you would like to see. The Sort 
+            by Date button orders the lists from earliest date to latest 
+            date, but it does not pre-sort, so if you add more incomes or 
+            expenses after sorting, you may want to click the button again.
         </p>
     </article>
     <section id="forms-container">
@@ -36,7 +41,7 @@
                 <label for="incomeSource">Income source:</label>
                 <input type="text" id="incomeSource" name="incomeSource" required><br><br>
                 <label for="incomeAmount">Income amount:</label>
-                <input type="number" id="incomeAmount" name="incomeAmount" required><br><br>
+                <input type="number" id="incomeAmount" name="incomeAmount" step=".01" required><br><br>
                 <label for="incomeDate">Income date:</label>
                 <input type="date" id="incomeDate" name="incomeDate"><br><br>
                 <button id="addIncome">Add Income</button><br><br>
@@ -48,18 +53,18 @@
                 <label for="expenseCategory">Category:</label>
                 <select id="expenseCategory" name="expenseCategory" required>
                     <option value="" selected disabled>Select an option</option>
+                    <option value="Add">*Add a New Category*</option>
                     <option value="Food">Food</option>
                     <option value="Rent">Rent</option>
                     <option value="Travel">Travel</option>
                     <option value="Entertainment">Entertainment</option>
-                    <option value="Add">Add: </option>
                 </select>
                 <br><br>
                 <input type="text" id="addExpenseCategory" name="addExpenseCategory" hidden><br>
                 <label for="expenseTitle">Expense title:</label>
                 <input type="text" id="expenseTitle" name="expenseTitle" required><br><br>
                 <label for="expenseAmount">Expense amount:</label>
-                <input type="number" id="expenseAmount" name="expenseAmount" required><br><br>
+                <input type="number" id="expenseAmount" name="expenseAmount" step=".01" required><br><br>
                 <label for="expenseDate">Expense date:</label>
                 <input type="date" id="expenseDate" name="expenseDate"><br><br>
                 <button id="addExpense">Add Expense</button>
