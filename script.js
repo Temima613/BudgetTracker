@@ -1,3 +1,7 @@
+/*Chana Leah Nissel
+  Temima Lewing
+  Sara Nechama Isenberg*/
+  
 // Program starts when the DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
   let incomeSource = '';
@@ -14,6 +18,20 @@ document.addEventListener('DOMContentLoaded', function() {
   let expenseDisplayContainer = document.createElement('div');
   expenseDisplayContainer.id = 'expenseDisplayContainer';
   document.querySelector('.expenses').appendChild(expenseDisplayContainer);
+
+  //Filter income by category
+  const sourceSelect = document.getElementById('incomeFilter');
+  sourceSelect.addEventListener('change', () => {
+      const selectedSource = sourceSelect.value;
+      const items = document.querySelectorAll('.incomeItem');
+      items.forEach(item => {
+          if (selectedSource === 'All Incomes' || item.dataset.source === selectedSource) {
+              item.style.display = 'block';
+          } else {
+              item.style.display = 'none';
+          }
+      });
+  });
 
   // Filter by expense category
   const categorySelect = document.getElementById('expenseFilter');
