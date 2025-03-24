@@ -140,6 +140,11 @@ document.addEventListener('DOMContentLoaded', function() {
             }
   
         }
+
+        document.getElementById('expenseForm').reset();
+        ///////////////////////////////////////////////////////////////////////
+        let addExpenseCategoryInput = document.getElementById('addExpenseCategory');
+        addExpenseCategoryInput.hidden = true;
   
         // Create expense display element
         let displayExpense = document.createElement('div');
@@ -156,8 +161,6 @@ document.addEventListener('DOMContentLoaded', function() {
         displayExpense.style.marginBottom = '10px';
         // Append to the container
         expenseDisplayContainer.appendChild(displayExpense);
-  
-        //document.getElementById('expenseForm').reset();
   
     });
   
