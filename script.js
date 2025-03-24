@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     expenseDisplayContainer.id = 'expenseDisplayContainer';
     document.querySelector('.expenses').appendChild(expenseDisplayContainer);
   
-    //Filter income by category
+    // Filter income by category
     const sourceSelect = document.getElementById('incomeFilter');
     sourceSelect.addEventListener('change', () => {
         const selectedSource = sourceSelect.value;
@@ -115,16 +115,6 @@ document.addEventListener('DOMContentLoaded', function() {
             return;
         }
   
-        // Append current expense object to the list of expenses
-        let expenseObject = { category: expenseCategory, title: expenseTitle, amount: expenseAmount, date: expenseDate || new Date().toISOString().split('T')[0] };
-        expenses.push(expenseObject);
-  
-        console.log('Expense added:', expenseCategory, expenseTitle, expenseAmount, expenseDate);
-  
-        // Display updated balance
-        balance -= expenseAmount;
-        displayBalance();
-  
         if (expenseCategory === 'Add') {
             expenseCategory = document.getElementById('addExpenseCategory').value; // Changes expenseCategory to the new one
             // Add the new category to both dropdown lists if it isn't already there:
@@ -134,8 +124,17 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.getElementById('expenseFilter').innerHTML +=
                     `<option value="${expenseCategory}">${expenseCategory}</option>`;
             }
-  
         }
+
+        // Append current expense object to the list of expenses
+        let expenseObject = { category: expenseCategory, title: expenseTitle, amount: expenseAmount, date: expenseDate || new Date().toISOString().split('T')[0] };
+        expenses.push(expenseObject);
+  
+        console.log('Expense added:', expenseCategory, expenseTitle, expenseAmount, expenseDate);
+  
+        // Display updated balance
+        balance -= expenseAmount;
+        displayBalance();
 
         //Clear expense form after user submits
         document.getElementById('expenseForm').reset();
